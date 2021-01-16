@@ -25,24 +25,6 @@ namespace CadastroLivros.Controllers
             return View(await _context.Livros.ToListAsync());
         }
 
-        // GET: Livros/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var livro = await _context.Livros
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (livro == null)
-            {
-                return NotFound();
-            }
-
-            return View(livro);
-        }
-
         // GET: Livros/Create
         public IActionResult Create()
         {
